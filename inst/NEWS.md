@@ -1,5 +1,10 @@
-kableExtra 1.4.0.5
+
+kableExtra 1.4.0.7
 --------------------------------------------------------------------------------
+
+New Features:
+
+* Added `show_every_page` argument to `footnote()` (#867).
 
 Bug Fixes:
 
@@ -14,6 +19,8 @@ containing LaTeX code to be rendered incorrectly in LaTeX
 documents (#836).
 * Fixed a bug in `save_kable_latex()` which left the user
 in the wrong directory if an error occurred (#865).
+* Fixed a bug in `magic_mirror_latex()` which
+stopped it from working with `tabularx` tables (#861).
 
 
 kableExtra 1.4.0
