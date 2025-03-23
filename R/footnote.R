@@ -337,13 +337,8 @@ footnote_latex <- function(kable_input, footnote_table, footnote_as_chunk,
     if(is.null(table_info$repeat_header_latex)) {
       # need full \begin{longtable} command
       # table_info valign2 ok but align missing vertical lines
-      # longtable_start <- sub(".*(\\\\begin\\{longtable\\}\\[.*]\\{.*?\\}).*",
-      #   "\\1", out)
-      # browser()
-      # out <- sub("(.*)(\\\\begin\\{longtable\\}\\[.*]\\{.*?\\})(.*)",
-      #   paste("\\1 \\2", fn_regexp, "\\3", sep = "\n"), out)
-      out <- sub("(.*)(\\\\end\\{longtable\\})",
-        paste("\\1", fn_regexp, "\\2", sep = "\n"), out)
+      out <- sub("(.*\\\\begin\\{longtable\\}\\[.*]\\{.*?\\})(.*)",
+        paste("\\1", fn_regexp, "\\\\endfoot\n\\2", sep = "\n"), out)
     } else {
       if(!table_info$booktabs){
         out <- sub(
